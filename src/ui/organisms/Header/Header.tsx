@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { useTheme } from '@/shared/hooks/useTheme'
+import { ThemeToggle } from '@/ui/molecules/ThemeToggle'
 import styles from './Header.module.css'
 
 interface HeaderProps {
@@ -22,7 +22,6 @@ const INITIAL_NOTIFICATIONS: Notification[] = [
 ]
 
 export function Header({ onMenuClick }: HeaderProps) {
-  const { theme, toggleTheme } = useTheme()
   const [notifOpen, setNotifOpen] = useState(false)
   const [notifications, setNotifications] = useState(INITIAL_NOTIFICATIONS)
   const notifRef = useRef<HTMLDivElement>(null)
@@ -57,18 +56,7 @@ export function Header({ onMenuClick }: HeaderProps) {
 
       <div className={styles.spacer} />
 
-      <button className={styles.themeBtn} onClick={toggleTheme} aria-label="Toggle theme">
-        {theme === 'light' ? (
-          <svg width="30" height="30" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-            <path d="M10 2v1M10 17v1M2 10h1M17 10h1M4.22 4.22l.7.7M15.08 15.08l.7.7M4.22 15.78l.7-.7M15.08 4.92l.7-.7" />
-            <circle cx="10" cy="10" r="4" />
-          </svg>
-        ) : (
-          <svg width="30" height="30" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M17 12.5A7 7 0 117.5 3a5.5 5.5 0 009.5 9.5z" />
-          </svg>
-        )}
-      </button>
+      <ThemeToggle />
 
       <div className={styles.notifWrapper} ref={notifRef}>
         <button
