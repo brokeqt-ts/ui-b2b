@@ -1,0 +1,70 @@
+.stepper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2);
+  position: relative;
+  flex: 1;
+}
+
+.indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-tertiary);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  z-index: 1;
+}
+
+.step[data-state='active'] .indicator {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.step[data-state='completed'] .indicator {
+  border-color: var(--color-success);
+  background-color: var(--color-success);
+  color: #ffffff;
+}
+
+.label {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  text-align: center;
+  max-width: 100px;
+}
+
+.step[data-state='active'] .label {
+  color: var(--color-text-primary);
+  font-weight: var(--font-medium);
+}
+
+.step[data-state='completed'] .label {
+  color: var(--color-text-secondary);
+}
+
+.connector {
+  position: absolute;
+  top: 16px;
+  left: calc(50% + 20px);
+  right: calc(-50% + 20px);
+  height: 2px;
+  background-color: var(--color-border);
+}
+
+.step[data-state='completed'] .connector {
+  background-color: var(--color-success);
+}

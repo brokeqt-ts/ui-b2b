@@ -1,0 +1,98 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-medium);
+  font-size: var(--text-sm);
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Sizes */
+.button[data-size='sm'] {
+  padding: var(--spacing-1-5) var(--spacing-3);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-md);
+}
+
+.button[data-size='md'] {
+  padding: var(--spacing-2) var(--spacing-4);
+}
+
+.button[data-size='lg'] {
+  padding: var(--spacing-2-5) var(--spacing-5);
+  font-size: var(--text-base);
+}
+
+/* Primary */
+.button[data-variant='primary'] {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  border-color: var(--color-accent);
+}
+
+.button[data-variant='primary']:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.button[data-variant='primary']:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Secondary */
+.button[data-variant='secondary'] {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.button[data-variant='secondary']:hover:not(:disabled) {
+  background-color: var(--color-hover);
+  border-color: var(--color-border-strong);
+}
+
+/* Ghost */
+.button[data-variant='ghost'] {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+
+.button[data-variant='ghost']:hover:not(:disabled) {
+  background-color: var(--color-hover);
+  color: var(--color-text-primary);
+}
+
+/* Danger */
+.button[data-variant='danger'] {
+  background-color: var(--color-danger);
+  color: #ffffff;
+  border-color: var(--color-danger);
+}
+
+.button[data-variant='danger']:hover:not(:disabled) {
+  background-color: var(--color-danger-hover);
+  border-color: var(--color-danger-hover);
+}
+
+/* States */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button[data-loading] {
+  pointer-events: none;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

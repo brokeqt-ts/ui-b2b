@@ -1,0 +1,60 @@
+.card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.subtitle {
+  font-size: var(--text-xl);
+  color: var(--color-text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link {
+  color: var(--color-text-link);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-6);
+}
+
+.successMsg {
+  text-align: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-success-subtle);
+  color: var(--color-success-text);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+}

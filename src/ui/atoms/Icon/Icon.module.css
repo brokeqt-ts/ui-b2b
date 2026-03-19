@@ -1,0 +1,27 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+.icon[data-size='sm'] {
+  width: 16px;
+  height: 16px;
+}
+
+.icon[data-size='md'] {
+  width: 20px;
+  height: 20px;
+}
+
+.icon[data-size='lg'] {
+  width: 24px;
+  height: 24px;
+}
+
+.icon > svg {
+  width: 100%;
+  height: 100%;
+}
