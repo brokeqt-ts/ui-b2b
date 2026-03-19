@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Button } from '@/ui/atoms/Button'
 import { Input } from '@/ui/atoms/Input'
 import { FormField } from '@/ui/molecules/FormField'
@@ -14,6 +14,7 @@ interface LoginFormData {
 
 export function LoginPage() {
   const navigate = useNavigate()
+  const location = useLocation()
   const login = useAuthStore((s) => s.login)
   const [loading, setLoading] = useState(false)
   const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>()
@@ -22,7 +23,7 @@ export function LoginPage() {
     setLoading(true)
     const ok = await login(data.email, data.password)
     setLoading(false)
-    if (ok) navigate('/')
+    if (ok) navigate(location.state?.from?.pathname ?? '/', { replace: true })
   }
 
   return (

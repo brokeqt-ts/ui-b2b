@@ -1,6 +1,7 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { DashboardLayout } from '@/layouts/DashboardLayout'
 import { AuthLayout } from '@/layouts/AuthLayout'
+import { RequireAuth } from './RequireAuth'
 import { LoginPage } from '@/pages/LoginPage'
 import { RegisterPage } from '@/pages/RegisterPage'
 import { RecoveryPage } from '@/pages/RecoveryPage'
@@ -14,21 +15,27 @@ import { ErrorPage } from '@/pages/ErrorPage'
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <DashboardLayout />,
+    element: <RequireAuth />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <DashboardPage /> },
-      { path: 'orders', element: <OrdersPage /> },
-      { path: 'orders/:id', element: <OrderDetailPage /> },
-      { path: 'onboarding', element: <OnboardingPage /> },
-      { path: 'settings', element: <SettingsPage /> },
+      {
+        path: '/',
+        element: <DashboardLayout />,
+        children: [
+          { index: true, element: <DashboardPage /> },
+          { path: 'orders', element: <OrdersPage /> },
+          { path: 'orders/:id', element: <OrderDetailPage /> },
+          { path: 'onboarding', element: <OnboardingPage /> },
+          { path: 'settings', element: <SettingsPage /> },
+        ],
+      },
     ],
   },
   {
     path: '/auth',
     element: <AuthLayout />,
     children: [
+      { index: true, element: <Navigate to="login" replace /> },
       { path: 'login', element: <LoginPage /> },
       { path: 'register', element: <RegisterPage /> },
       { path: 'recovery', element: <RecoveryPage /> },
