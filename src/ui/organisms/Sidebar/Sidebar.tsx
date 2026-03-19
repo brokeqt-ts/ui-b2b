@@ -36,8 +36,8 @@ const ICONS: Record<string, ReactNode> = {
   ),
   settings: (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="10" cy="10" r="3" />
-      <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" />
+      <circle cx="10" cy="10" r="2.5" />
+      <path d="M10 2l-1.2 2.6A5.5 5.5 0 006.5 6L4 5.1 2 8.6l2.1 1.7v1.4L2 13.4 4 16.9l2.5-.9a5.5 5.5 0 002.3 1.4L10 20l1.2-2.6a5.5 5.5 0 002.3-1.4l2.5.9 2-3.5-2.1-1.7v-1.4l2.1-1.7-2-3.5-2.5.9A5.5 5.5 0 0011.2 4.6L10 2z" />
     </svg>
   ),
 }

@@ -4,7 +4,6 @@ import { Button } from '@/ui/atoms/Button'
 import { Input } from '@/ui/atoms/Input'
 import { Toggle } from '@/ui/atoms/Toggle'
 import { FormField } from '@/ui/molecules/FormField'
-import { ThemeToggle } from '@/ui/molecules/ThemeToggle'
 import { Card } from '@/ui/organisms/Card'
 import { useToastStore } from '@/ui/molecules/Toast'
 import { mockUser } from '@/mock/users'
@@ -97,13 +96,6 @@ function NotificationsTab() {
             <p className={styles.settingDesc}>Сводка по понедельникам</p>
           </div>
           <Toggle defaultChecked />
-        </div>
-        <div className={styles.settingItem}>
-          <div>
-            <p className={styles.settingLabel}>Тема оформления</p>
-            <p className={styles.settingDesc}>Переключение между светлой и тёмной темой</p>
-          </div>
-          <ThemeToggle />
         </div>
       </div>
     </Card>

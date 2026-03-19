@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { ThemeToggle } from '@/ui/molecules/ThemeToggle'
 import styles from './Header.module.css'
 
 interface HeaderProps {
@@ -55,6 +56,7 @@ export function Header({ onMenuClick }: HeaderProps) {
 
       <div className={styles.spacer} />
 
+      <ThemeToggle />
 
       <div className={styles.notifWrapper} ref={notifRef}>
         <button
