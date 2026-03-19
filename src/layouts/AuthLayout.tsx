@@ -1,13 +1,9 @@
 import { Outlet } from 'react-router-dom'
-import { ThemeToggle } from '@/ui/molecules/ThemeToggle'
 import styles from './AuthLayout.module.css'
 
 export function AuthLayout() {
   return (
     <div className={styles.layout}>
-      <div className={styles.themeBtn}>
-        <ThemeToggle />
-      </div>
       <div className={styles.container}>
         <div className={styles.logo}>
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
